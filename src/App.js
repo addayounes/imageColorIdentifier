@@ -30,7 +30,7 @@ function App() {
   const handleGetColor = () => {
     setLoading(true)
     app.models.predict(
-      'eeed0b6733a644cea07cf4c60f87ebb7',
+      process.env.REACT_APP_COLOR_MODEL,
       imageLink)
       .then(response => {
         setColors(response.rawData.outputs[0].data.colors)
